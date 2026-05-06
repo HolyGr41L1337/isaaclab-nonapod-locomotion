@@ -1,0 +1,18 @@
+[package]
+version = "0.1.0"
+category = "isaaclab"
+readme = "README.md"
+title = "Nonapod Lab"
+author = "Codex"
+maintainer = "Codex"
+description = "External Isaac Lab project for a trainable nine-legged robot."
+repository = "https://example.com/nonapod-lab"
+keywords = ["isaaclab", "robotics", "locomotion", "nonapod"]
+
+[dependencies]
+"isaaclab" = {}
+"isaaclab_rl" = {}
+"isaaclab_tasks" = {}
+
+[[python.module]]
+name = "nonapod_lab"

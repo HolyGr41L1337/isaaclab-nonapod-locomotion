@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools", "toml"]
+build-backend = "setuptools.build_meta"
+
+[tool.isort]
+atomic = true
+profile = "black"
+line_length = 120
+py_version = 311
+skip_glob = ["logs/*"]
+group_by_package = true
+sections = [
+    "FUTURE",
+    "STDLIB",
+    "THIRDPARTY",
+    "ISAACLABPARTY",
+    "FIRSTPARTY",
+    "LOCALFOLDER",
+]
+extra_standard_library = [
+    "numpy",
+    "torch",
+    "gymnasium",
+    "yaml",
+    "toml",
+    "prettytable",
+]
+known_thirdparty = [
+    "isaacsim.core.api",
+    "isaacsim.core.utils.torch",
+    "omni.kit.*",
+    "pxr",
+    "warp",
+    "carb",
+]
+known_isaaclabparty = [
+    "isaaclab",
+    "isaaclab_assets",
+    "isaaclab_rl",
+    "isaaclab_tasks",
+]
+known_firstparty = ["nonapod_lab"]
+
+[tool.pyright]
+exclude = ["**/__pycache__", "**/logs", ".git", ".vscode"]
+typeCheckingMode = "basic"
+pythonVersion = "3.11"
+pythonPlatform = "Linux"
+reportMissingImports = "none"
+reportMissingModuleSource = "none"
+reportGeneralTypeIssues = "none"
+reportOptionalMemberAccess = "warning"
